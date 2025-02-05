@@ -242,7 +242,12 @@
             errorMessage.classList.remove("show");
 
             const heartEmoji = '<img src="https://cdn.discordapp.com/emojis/1293988399656603648.webp?size=48" class="emoji-img">';
-            const messages = [
+            
+            // Проверяем специальные варианты имени
+            const specialNames = ["Гаечка", "Гае4чка", "Gaechka", "Gae4ka"];
+            const isSpecialName = specialNames.includes(name);
+
+            const messages = isSpecialName ? Array(5).fill("ERM") : [
                 `Ты важный для меня человек, ${name}`,
                 `Ты живёшь в моем сердце ${heartEmoji} ${name} ${heartEmoji}`,
                 `Хочу слушать твои стоны... ой... голос вечно ${name}`,
